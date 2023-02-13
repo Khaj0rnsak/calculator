@@ -1,0 +1,69 @@
+$bgcolor: black;
+$clwidth: white;
+$bgbutton: rgb(199,199,199);
+
+body{
+  margin:0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+.calculator{
+  background: $clwidth;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px -5px $bgcolor;
+}
+
+.calculator-display{
+  background-color: $bgcolor;
+  color: $clwidth;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 10px 10px 0 0;
+}
+
+.calculator-display h1{
+  margin: 0;
+  font-size: 45px;
+  padding: 25px;
+  font-weight: 100;
+  overflow-x: auto;
+}
+
+.calculator-button{
+  display: grid;
+  grid-template-columns: repeat(4,1fr); //แบ่งเป็น 4ส่วน ส่วนสุดท้ายเกินมาจะกินพื้นที่ตรงนั้นเลย
+  grid-gap: 10px;
+  padding: 10px;
+}
+.result{
+  grid-column: -2;
+  grid-row: 3/span 3;
+}
+
+button{
+  min-height: 50px;
+  font-size: 20px;
+  font-weight: 100;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: $bgbutton;
+}
+button:hover{
+  filter: brightness(110%) //hover สว่าง
+}
+
+button:active{
+  transform: translateY(1px); //action ขยับ
+}
+.condition, .result, .del{
+  background: orange;
+  color: $clwidth;
+  font-size: 30px;
+}
